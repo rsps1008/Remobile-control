@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rocker="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".keyboard"
+    tools:layout_editor_absoluteY="81dp">
+
+    <com.gcssloop.widget.RockerView
+        android:id="@+id/rocker"
+        android:layout_width="239dp"
+        android:layout_height="252dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonL"
+        app:layout_constraintEnd_toStartOf="@+id/buttonR"
+        app:layout_constraintStart_toStartOf="@+id/buttonR"
+        app:layout_constraintTop_toBottomOf="@+id/send"
+        rocker:area_background="@drawable/area_bg"
+        rocker:area_radius="100dp"
+        rocker:rocker_background="@drawable/rocker_bg"
+        rocker:rocker_radius="30dp" />
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="16dp"
+        android:hint="請輸入欲傳送字串"
+        app:layout_constraintBottom_toTopOf="@+id/send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="send"
+        app:layout_constraintBottom_toTopOf="@+id/rocker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="99dp"
+        android:text="主選單"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonL" />
+
+    <Button
+        android:id="@+id/buttonL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="98dp"
+        android:layout_marginBottom="16dp"
+        android:text="左鍵"
+        app:layout_constraintBottom_toTopOf="@+id/back"
+        app:layout_constraintEnd_toStartOf="@+id/buttonR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rocker" />
+
+    <Button
+        android:id="@+id/buttonR"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="97dp"
+        android:text="右鍵"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonL" />
+
+</android.support.constraint.ConstraintLayout>
